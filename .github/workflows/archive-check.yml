@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check retired cells have RETROSPECTIVE.md
         run: |
+          shopt -s nullglob
           for dir in archive/*/; do
             slug=$(basename "$dir")
             if [[ ! -f "$dir/RETROSPECTIVE.md" ]]; then

@@ -6,7 +6,7 @@
 
 | Resource | Value |
 |----------|-------|
-| Org | https://github.com/Joka-Source |
+| Org | <https://github.com/Joka-Source> |
 | Org owner | Krishna Chaudhari (TrueKrishna) |
 | 2FA required | Yes |
 

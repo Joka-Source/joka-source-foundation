@@ -60,7 +60,7 @@ For general inquiries, open an issue in this repository.
 
 ## Repository Structure
 
-```
+```text
 joka-source-foundation/
 ├── constitution/     — founding bylaws, CRISPR model, amendments
 ├── roster/           — member schema and founder/advisor records

@@ -12,7 +12,7 @@ Rationale: The explicit patent grant matters for an alumni-contributed codebase 
 
 All contributors sign off via Developer Certificate of Origin (DCO) on every commit:
 
-```
+```text
 Signed-off-by: Your Name <your@email.com>
 ```
 

@@ -8,7 +8,7 @@ All contributions to JSF projects are covered by the DCO. Contributors sign off 
 
     Signed-off-by: Full Name <email@example.com>
 
-This certifies compliance with https://developercertificate.org
+This certifies compliance with <https://developercertificate.org>
 
 No additional agreement is needed for individual contributors.
 

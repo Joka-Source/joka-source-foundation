@@ -86,7 +86,7 @@ All significant decisions affecting JSF — licensing, governance, project spawn
 
 **Context:** JSF needed a GitHub org to host the wrapper repo and sub-project repos.
 
-**Decision:** `Joka-Source` — https://github.com/Joka-Source
+**Decision:** `Joka-Source` — <https://github.com/Joka-Source>
 
 **Rationale:** Short, matches "Joka Source Foundation" without the trailing word. Org created and available.
 

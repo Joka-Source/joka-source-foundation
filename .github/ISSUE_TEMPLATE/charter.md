@@ -7,7 +7,7 @@ labels: project-spawn
 
 ## Project name and slug
 
-**Name:** 
+**Name:**
 **Slug:** (lowercase alphanumeric + hyphens; `joka-*` prefix requires founding cell sign-off)
 
 ## Problem statement
