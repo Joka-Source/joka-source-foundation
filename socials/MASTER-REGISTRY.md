@@ -6,10 +6,15 @@ Canonical list of all JSF social accounts. This is the single source of truth �
 
 | Platform | Handle | URL | Custodian | Established | Status |
 |----------|--------|-----|-----------|-------------|--------|
-| Instagram | TODO | TODO | TODO | TODO | pending |
-| LinkedIn | TODO | TODO | TODO | TODO | pending |
-| Twitter/X | TODO | TODO | TODO | TODO | pending |
-| Discord | TODO | TODO | TODO | TODO | pending |
+| GitHub Org | `Joka-Source` | <https://github.com/Joka-Source> | Founding cell | 2026-07-01 | live |
+| LinkedIn | `joka-source-foundation` | TODO once registered | Founding cell | TODO | to register |
+| Twitter/X | `@jokasource` (fallback `@jokasourcefdn`) | TODO once registered | Founding cell | TODO | to register — check availability first |
+| Instagram | `@jokasource` (fallback `@joka.source`) | TODO once registered | Founding cell | TODO | to register |
+| YouTube | `@jokasource` | TODO once registered | Founding cell | TODO | to register — hold until there's a recorded demo worth posting |
+| Substack | `jokasource.substack.com` | TODO once registered | Founding cell | TODO | to register |
+| Discord | TODO | TODO | TODO | TODO | pending — deferred until community size warrants it |
+
+Where the primary handle `jokasource` is unavailable on a given platform, use `jokasourcefdn` consistently rather than mixing conventions per platform.
 
 ## Access Policy
 
@@ -29,4 +34,4 @@ Canonical list of all JSF social accounts. This is the single source of truth �
 
 - Register all handles above (check availability and trademark before committing)
 - Set up password manager / secrets policy (see `ops/secrets-policy.md`)
-- Draft per-channel playbooks (see `instagram-playbook.md`, `linkedin-playbook.md`, etc.)
+- Per-channel playbooks are drafted — see `instagram-playbook.md`, `linkedin-playbook.md`, `twitter-playbook.md`, `discord-playbook.md`

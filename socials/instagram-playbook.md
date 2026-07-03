@@ -4,7 +4,7 @@ Channel-specific content strategy for JSF's Instagram presence.
 
 ## Monthly Calendar
 
-TODO: Posting cadence (recommendation: 3-4 posts/week, feed + stories).
+Cadence: 1x/week, feed post or carousel. Lower priority than LinkedIn/X at v0 — do not commit to 3-4x/week, that assumes headcount JSF doesn't have yet.
 
 ## Voice & Tone
 
@@ -12,17 +12,19 @@ Visual, energetic, community-first. Lead with compelling visuals of campus, proj
 
 ## Content Pillars
 
-1. TODO - e.g. Behind-the-build reels
-2. TODO - e.g. Alumni spotlights
-3. TODO - e.g. Event announcements
+1. Alumni Spotlight — campus-texture photos/carousels paired with a contributor or alum story.
+2. Behind-the-build — low-effort screenshots/diagrams from Build Log content, repurposed visually.
+3. Milestone announcements — new project cell live, first external contributor, etc.
 
 ## CTA Framework
 
-TODO: What actions do we ask followers to take?
+- Tag the alum or contributor featured (with consent).
+- Link to LinkedIn/X for the full story rather than duplicating long text in captions.
 
 ## Story Templates
 
-TODO: Define repeatable story formats (e.g. "Week in review", "Project milestone").
+- "Week in review" — 2-3 slides recapping the week's Build Log items.
+- "Project milestone" — single-slide announcement, links to repo in bio.
 
 ## Crisis Response
 
