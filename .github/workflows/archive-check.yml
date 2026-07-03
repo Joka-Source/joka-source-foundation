@@ -1,0 +1,35 @@
+name: Archive check
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'archive/**'
+      - 'projects/**'
+
+jobs:
+  archive-integrity:
+    name: Archive integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check retired cells have RETROSPECTIVE.md
+        run: |
+          for dir in archive/*/; do
+            slug=$(basename "$dir")
+            if [[ ! -f "$dir/RETROSPECTIVE.md" ]]; then
+              echo "ERROR: $dir is missing RETROSPECTIVE.md"
+              exit 1
+            fi
+          done
+          echo "Archive integrity OK"
+      - name: Check no active project uses a burned slug
+        run: |
+          burned=$(grep -oP '\| \K[a-z0-9-]+(?= \|.*retired)' archive/retired-cells.md 2>/dev/null || true)
+          for slug in $burned; do
+            if [[ -d "projects/$slug" ]]; then
+              echo "ERROR: projects/$slug uses burned slug '$slug'"
+              exit 1
+            fi
+          done
+          echo "No burned slugs detected in active projects"

@@ -1,0 +1,19 @@
+# CODEOWNERS — auto-requests review from the right person on every PR
+
+# Default: all files → founding cell
+* @TrueKrishna
+
+# Constitution and governance → founding cell explicit
+/constitution/   @TrueKrishna
+/governance/     @TrueKrishna
+/legal/          @TrueKrishna
+/roster/         @TrueKrishna
+
+# Per-project cells → cell lead (update as leads are named)
+/projects/joka-cv/       @TrueKrishna
+/projects/alumerp/       @TrueKrishna
+/projects/joka-connect/  @TrueKrishna
+
+# Tools → founding cell (CI-critical)
+/tools/          @TrueKrishna
+/.github/        @TrueKrishna

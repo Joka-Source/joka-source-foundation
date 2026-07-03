@@ -1,0 +1,28 @@
+{
+  "_comment": "JSF brand color palette — TODO: define colors with design team",
+  "primary": {
+    "hex": "TODO",
+    "rgb": "TODO",
+    "wcag_contrast_on_white": "TODO",
+    "wcag_contrast_on_black": "TODO"
+  },
+  "secondary": {
+    "hex": "TODO",
+    "rgb": "TODO"
+  },
+  "accent": {
+    "hex": "TODO",
+    "rgb": "TODO"
+  },
+  "neutral": {
+    "dark": "TODO",
+    "mid": "TODO",
+    "light": "TODO"
+  },
+  "semantic": {
+    "success": "TODO",
+    "warning": "TODO",
+    "error": "TODO",
+    "info": "TODO"
+  }
+}

@@ -1,0 +1,35 @@
+name: Lint
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+      - name: Lint all markdown files
+        run: markdownlint "**/*.md" --ignore node_modules
+
+  charter-validate:
+    name: Charter validator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run charter validator on changed project folders
+        run: |
+          CHANGED=$(git diff --name-only origin/main...HEAD -- 'projects/**' | grep -oP 'projects/[^/]+' | sort -u || true)
+          if [[ -n "$CHANGED" ]]; then
+            echo "Validating: $CHANGED"
+            python3 tools/charter-validator.py $CHANGED
+          else
+            echo "No project cell changes — skipping charter validation"
+          fi
