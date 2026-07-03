@@ -6,7 +6,7 @@ Canonical list of all JSF social accounts. This is the single source of truth â€
 
 | Platform | Handle | URL | Custodian | Established | Status |
 |----------|--------|-----|-----------|-------------|--------|
-| GitHub Org | `Joka-Source` | https://github.com/Joka-Source | Founding cell | 2026-07-01 | live |
+| GitHub Org | `Joka-Source` | <https://github.com/Joka-Source> | Founding cell | 2026-07-01 | live |
 | LinkedIn | `joka-source-foundation` | TODO once registered | Founding cell | TODO | to register |
 | Twitter/X | `@jokasource` (fallback `@jokasourcefdn`) | TODO once registered | Founding cell | TODO | to register â€” check availability first |
 | Instagram | `@jokasource` (fallback `@joka.source`) | TODO once registered | Founding cell | TODO | to register |
