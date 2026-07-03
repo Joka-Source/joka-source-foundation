@@ -10,15 +10,19 @@ TODO: One sentence on this month's content focus.
 
 ### Weekly Plan
 
-| Week | Platform | Content Type | Topic / Headline | Status | Published Date | Link |
-|------|----------|-------------|-----------------|--------|----------------|------|
-| W1 | Instagram | Post | TODO | draft | | |
-| W1 | LinkedIn | Article | TODO | draft | | |
-| W2 | Twitter/X | Thread | TODO | draft | | |
-| W2 | Instagram | Story | TODO | draft | | |
-| W3 | LinkedIn | Post | TODO | draft | | |
-| W3 | Discord | Announcement | TODO | draft | | |
-| W4 | All | Monthly recap | TODO | draft | | |
+Columns: `Week`, `Platform`, `Pillar` (Build Log / Founder Notes / Alumni Spotlight / Open Invitation), `Content Type`, `Topic / Headline`, `Status` (idea / drafted / scheduled / posted), `Owner` (founder initials, or "faceless" for brand-voice posts), `Published Date`, `Link`.
+
+| Week | Platform | Pillar | Content Type | Topic / Headline | Status | Owner | Published Date | Link |
+|------|----------|--------|-------------|-----------------|--------|-------|----------------|------|
+| W1 | LinkedIn | Founder Notes | Post | TODO | idea | | | |
+| W1 | Twitter/X | Build Log | Post | TODO | idea | faceless | | |
+| W2 | Twitter/X | Open Invitation | Post | TODO | idea | faceless | | |
+| W2 | Instagram | Alumni Spotlight | Carousel | TODO | idea | | | |
+| W3 | LinkedIn | Alumni Spotlight | Post | TODO | idea | | | |
+| W3 | Twitter/X | Build Log | Thread | TODO | idea | faceless | | |
+| W4 | LinkedIn | Founder Notes | Post | TODO | idea | | | |
+
+This reflects the v0 cadence (LinkedIn 2x/week, Twitter/X 3x/week, Instagram 1x/week — see `socials/voice-guide.md`), not the higher-volume rows this template previously assumed.
 
 ### Key Dates This Month
 
