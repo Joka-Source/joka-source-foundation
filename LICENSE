@@ -1,0 +1,9 @@
+TODO: choose between Apache-2.0 and MIT
+
+The default project license has not been finalized yet. See ADR-002 in
+governance/DECISIONS.md and governance/LICENSING.md for the open decision
+and the blueprint's recommendation (Apache-2.0). The founding cell must
+confirm before this file is replaced with the actual license text.
+
+Until this decision is made, no license grant is in effect for this
+repository's contents.

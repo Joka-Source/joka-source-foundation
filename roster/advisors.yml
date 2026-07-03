@@ -1,0 +1,17 @@
+# JSF Advisors roster
+# Schema: see SCHEMA.md
+# This file may be made public; confirm consent before publishing.
+
+# TODO: Add advisor entries as they are onboarded.
+# Example entry:
+#
+# ---
+# name: Full Name
+# handle: unique-handle
+# role: Advisor
+# status: active
+# joined_on: YYYY-MM-DD
+# linkedin: https://www.linkedin.com/in/handle/
+# expertise: "Domain expertise — e.g. Product, Finance, Legal"
+# tenure: "2026–2028"
+# ---

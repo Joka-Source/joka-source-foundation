@@ -1,0 +1,21 @@
+# PRIVATE — DO NOT MAKE PUBLIC WITHOUT PRIVACY REVIEW
+# JSF Alumni roster
+# Schema: see SCHEMA.md
+#
+# This file is private. It contains opt-in booleans for Joka Connect.
+# PII removal requests: open a private issue. Founders must action within 48h.
+# Absolute minimum: name, cohort, opt_in_joka_connect. Nothing else here.
+#
+# DO NOT add: dating preferences, marital status, photos, health data.
+# Those belong in the Joka Connect app database with its own consent flow.
+
+# TODO: Populate as IIMC alumni opt in.
+# Example entry:
+#
+# ---
+# name: Full Name
+# cohort: PGP 2027
+# linkedin_handle: linkedin-username
+# opt_in_joka_connect: false
+# joined_on: YYYY-MM-DD
+# ---
