@@ -14,8 +14,8 @@ names, private repository paths, credentials, or production topology.
 4. **Runtime backends:** the narrowest production host, GitHub environment, or
    approved secret manager that actually needs the value.
 
-A private Git repository is not by itself a secret manager. The decryption
-identity or KMS root must never be stored in the repository it decrypts.
+A private Git repository is not by itself a secret manager. Keep the age
+identity on the production host, never in the repository it decrypts.
 
 ## What is a secret
 
@@ -46,9 +46,8 @@ access-controlled.
 ## Access and recovery
 
 - Grant least privilege to individual identities; avoid shared accounts.
-- Use at least two reviewed recovery paths for encrypted production escrow.
-- Keep recovery material outside both the ciphertext repository and the
-  production host it protects.
+- Keep one protected recovery copy of the production age identity outside both
+  the ciphertext repository and the production host it protects.
 - Offboarding revokes access and rotates affected shared credentials promptly.
 - Never download broad secret sets merely to make development convenient.
 
