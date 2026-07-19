@@ -33,6 +33,12 @@ JSF is modelled on the CRISPR cell lifecycle (see [`constitution/v0.md`](constit
 3. Pick a project in [`projects/`](projects/) and open an issue or PR.
 4. Graduating IIMC students: contributor → committer → cell governance (see [`constitution/v0.md`](constitution/v0.md)).
 
+## Engineering knowledge
+
+Reusable product-development and operational lessons live in
+[`engineering/`](engineering/README.md). Project-specific implementation and
+evidence remain in each product repository.
+
 ---
 
 ## Governance
@@ -71,6 +77,7 @@ joka-source-foundation/
 ├── governance/       — decisions log, meeting notes, contribution policy
 ├── legal/            — entity status, IP assignment, MoUs
 ├── ops/              — accounts inventory, domains, secrets policy
+├── engineering/      — contributor-safe product engineering playbooks
 ├── archive/          — retired project cells (final state + retrospective)
 ├── tools/            — project scaffold script, charter linter
 └── .github/          — issue templates, CI workflows, CODEOWNERS
