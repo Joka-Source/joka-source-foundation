@@ -1,0 +1,5 @@
+#!/bin/sh
+# JOKA-CODEX-EVENTS:START
+root=$(git rev-parse --show-toplevel)
+sh "$root/.codex/events/run-node.sh" commit-msg "$1"
+# JOKA-CODEX-EVENTS:END

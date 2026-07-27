@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "project": "Joka Source Foundation",
+  "repository": "joka-source-foundation",
+  "events": "events.md",
+  "installed_from": "Joka-Source/joka-source#dev/codex-events",
+  "tool_sha256": "d5b023e96d250e6abb6081421e430c433134f154151579c982e8c4a68ee91640",
+  "raw_transcripts": "forbidden",
+  "local_hooks_activated_during_install": false
+}
