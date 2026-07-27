@@ -463,6 +463,22 @@ function validRebasedBase(root, parent, event, events) {
   return parseEvents(parentEventsText).some((item) => item.id === predecessor.id);
 }
 
+function inferSingleEventSquash(root, commit, parent, repository, eventsText, events) {
+  if (!parent) return null;
+  const parentEventsText = gitText(["show", `${parent}:events.md`], root, true);
+  if (!parentEventsText) return null;
+  const parentEvents = parseEvents(parentEventsText);
+  if (events.length !== parentEvents.length + 1) return null;
+  if (!parentEvents.every((event, index) => event.id === events[index]?.id)) return null;
+
+  const event = events.at(-1);
+  const expectedEventsText = `${parentEventsText}\n${markdownEvent(event)}`.trimEnd();
+  if (eventsText.trimEnd() !== expectedEventsText) return null;
+  const errors = validateEvent(event, repository, commitChangedFiles(root, commit), parent);
+  if (errors.length > 0) return null;
+  return event;
+}
+
 async function verifyCommit(root, commit) {
   const configText = gitText(["show", `${commit}:.joka/events.json`], root, true);
   if (!configText) return { commit, enforced: false, ok: true, event: null };
@@ -475,14 +491,19 @@ async function verifyCommit(root, commit) {
   const eventsText = gitText(["show", `${commit}:events.md`], root, true);
   if (!eventsText) return { commit, enforced: true, ok: false, event: null, errors: ["events.md missing"] };
   const events = parseEvents(eventsText);
+  const parent = gitText(["rev-parse", `${commit}^`], root, true);
   const trailer = gitText(["show", "-s", "--format=%(trailers:key=Joka-Event,valueonly)", commit], root, true);
-  if (!trailer) return { commit, enforced: true, ok: false, event: null, errors: ["Joka-Event commit trailer missing"] };
+  if (!trailer) {
+    const inferred = inferSingleEventSquash(root, commit, parent, config.repository || basename(root), eventsText, events);
+    if (!inferred) return { commit, enforced: true, ok: false, event: null, errors: ["Joka-Event commit trailer missing"] };
+    return { commit, enforced: true, ok: true, event: inferred.id, inference: "single-event-squash", errors: [] };
+  }
   const event = events.find((item) => item.id === trailer);
   if (!event) return { commit, enforced: true, ok: false, event: trailer, errors: ["commit trailer has no matching event"] };
-  const parent = gitText(["rev-parse", `${commit}^`], root, true) || event.base_revision;
+  const effectiveParent = parent || event.base_revision;
   const errors = validateEvent(event, config.repository || basename(root), commitChangedFiles(root, commit));
-  if (event.base_revision !== parent && !validRebasedBase(root, parent, event, events)) {
-    errors.push(`base revision must be ${parent}`);
+  if (event.base_revision !== effectiveParent && !validRebasedBase(root, effectiveParent, event, events)) {
+    errors.push(`base revision must be ${effectiveParent}`);
   }
   return { commit, enforced: true, ok: errors.length === 0, event: trailer, errors };
 }

@@ -4,7 +4,7 @@
   "repository": "joka-source-foundation",
   "events": "events.md",
   "installed_from": "Joka-Source/joka-source#dev/codex-events",
-  "tool_sha256": "daaef250a377594b2bee863f60de76639ea7c01ac986d5d415fb73b97f68366f",
+  "tool_sha256": "a7b34920e15ab1c6eb7f4e4ca8a6eb5c8cb9abceaee0614e644f2670b242306f",
   "raw_transcripts": "forbidden",
   "local_hooks_activated_during_install": false
 }
