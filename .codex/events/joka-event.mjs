@@ -448,6 +448,21 @@ function commitChangedFiles(root, commit) {
     .sort();
 }
 
+function validRebasedBase(root, parent, event, events) {
+  if (!parent || !event.base_revision) return false;
+  const ancestor = git(["merge-base", "--is-ancestor", event.base_revision, parent], { cwd: root, allowFailure: true });
+  if (ancestor.status === 0) return true;
+
+  const index = events.findIndex((item) => item.id === event.id);
+  if (index <= 0) return false;
+  const predecessor = events[index - 1];
+  const parentTrailer = gitText(["show", "-s", "--format=%(trailers:key=Joka-Event,valueonly)", parent], root, true);
+  if (!parentTrailer || parentTrailer !== predecessor.id) return false;
+  const parentEventsText = gitText(["show", `${parent}:events.md`], root, true);
+  if (!parentEventsText) return false;
+  return parseEvents(parentEventsText).some((item) => item.id === predecessor.id);
+}
+
 async function verifyCommit(root, commit) {
   const configText = gitText(["show", `${commit}:.joka/events.json`], root, true);
   if (!configText) return { commit, enforced: false, ok: true, event: null };
@@ -465,7 +480,10 @@ async function verifyCommit(root, commit) {
   const event = events.find((item) => item.id === trailer);
   if (!event) return { commit, enforced: true, ok: false, event: trailer, errors: ["commit trailer has no matching event"] };
   const parent = gitText(["rev-parse", `${commit}^`], root, true) || event.base_revision;
-  const errors = validateEvent(event, config.repository || basename(root), commitChangedFiles(root, commit), parent);
+  const errors = validateEvent(event, config.repository || basename(root), commitChangedFiles(root, commit));
+  if (event.base_revision !== parent && !validRebasedBase(root, parent, event, events)) {
+    errors.push(`base revision must be ${parent}`);
+  }
   return { commit, enforced: true, ok: errors.length === 0, event: trailer, errors };
 }
 
