@@ -1,0 +1,41 @@
+{
+  "description": "Capture privacy-safe Codex activity for commit-linked development events.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$(git rev-parse --show-toplevel)/.codex/events/run-node.sh\" hook prompt",
+            "timeout": 5,
+            "statusMessage": "Recording safe request metadata"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "^(Bash|apply_patch|Edit|Write)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$(git rev-parse --show-toplevel)/.codex/events/run-node.sh\" hook tool",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$(git rev-parse --show-toplevel)/.codex/events/run-node.sh\" hook stop",
+            "timeout": 5,
+            "statusMessage": "Finalizing safe development evidence"
+          }
+        ]
+      }
+    ]
+  }
+}
