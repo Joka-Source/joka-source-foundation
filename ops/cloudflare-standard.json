@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "jsf-cloudflare-production-v1",
+  "provider": "Cloudflare",
+  "account_alias": "JSF Cloudflare",
+  "credential_authority": "QM",
+  "custody": {
+    "organization_account_required": true,
+    "repository_content": "aliases_and_non_secret_ids_only",
+    "least_privilege": true
+  },
+  "release": {
+    "required_evidence": [
+      "content_source_commit",
+      "deployment_source_commit",
+      "lockfile_sha256",
+      "worker_sha256",
+      "assets_tree_sha256",
+      "immutable_version_id",
+      "preview_url",
+      "deployed_version_id",
+      "rollback_target"
+    ],
+    "same_version_preview_to_production": true,
+    "clean_worktree_required": true,
+    "reproducible_build_required": true,
+    "production_requires_review": true
+  },
+  "dns": {
+    "zone_mode": "full",
+    "assigned_nameserver_count": 2,
+    "cutover_sequence": [
+      "inventory_existing_zone",
+      "remove_stale_parent_ds",
+      "create_and_verify_cloudflare_zone",
+      "replace_registrar_nameservers",
+      "verify_unsigned_delegation",
+      "enable_cloudflare_dnssec",
+      "install_new_parent_ds",
+      "verify_dnssec_chain"
+    ],
+    "preserve_unknown_records": true
+  },
+  "edge": {
+    "canonical_https_required": true,
+    "www_redirect_status": 308,
+    "www_redirect_preserves_path_and_query": true,
+    "required_headers": [
+      "strict-transport-security",
+      "x-content-type-options",
+      "x-frame-options",
+      "referrer-policy",
+      "permissions-policy",
+      "content-security-policy"
+    ],
+    "observability_required": true
+  },
+  "verification": {
+    "public_resolvers": ["1.1.1.1", "8.8.8.8"],
+    "parent_delegation_required": true,
+    "dnssec_required": true,
+    "apex_and_www_tls_required": true,
+    "exact_content_required": true,
+    "public_asset_required": true,
+    "rollback_health_required": true,
+    "redacted_evidence_required": true
+  },
+  "rollback": {
+    "previous_worker_version_required": true,
+    "independent_origin_required_during_migration": true,
+    "registrar_delegation_snapshot_required": true,
+    "drill_required_before_closure": true
+  },
+  "exceptions": {
+    "decision_record_required": true,
+    "expiry_required": true,
+    "owner_required": true
+  }
+}

@@ -78,6 +78,20 @@ All significant decisions affecting JSF — licensing, governance, project spawn
 
 ## Closed Decisions
 
+### ADR-006: Cloudflare production and credential custody standard
+
+**Date:** 2026-08-10
+**Status:** Decided
+**Deciders:** Founding Cell
+
+**Context:** JSF projects need one auditable way to own domains, publish edge applications, promote exact artifacts, recover from failed releases, and keep credentials out of public repositories.
+
+**Decision:** Cloudflare full-zone DNS, Worker versions, TLS, edge policy, observability, and DNSSEC are the production default. QM is the canonical credential authority. Preview and production must use the same immutable version, and every domain must retain registrar and application rollback evidence.
+
+**Rationale:** One organization-owned edge control plane reduces fragmented custody while exact-artifact promotion, independent public verification, staged DNSSEC, and explicit rollback keep migrations reversible.
+
+**Consequences:** Projects must satisfy [`ops/cloudflare-standard.json`](../ops/cloudflare-standard.json), validate their domain contract, and preserve redacted evidence. Exceptions require an owned, expiring decision record. Registrar identity and delegation steps remain human-controlled boundaries.
+
 ### ADR-001: GitHub org name
 
 **Date:** 2026-07-01

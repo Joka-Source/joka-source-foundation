@@ -18,7 +18,7 @@
 
 ## Storage
 
-TODO: Define the approved secrets manager (e.g. GitHub Secrets for CI, Doppler for application secrets, Bitwarden for shared team credentials).
+QM is the canonical JSF credential authority. Provider-native authentication and workload identity may consume credentials under QM custody, but they do not become independent credential records.
 
 All secrets must be stored in the approved manager. No secrets in:
 - Git repository (any branch)
@@ -26,6 +26,10 @@ All secrets must be stored in the approved manager. No secrets in:
 - Slack / Discord
 - Email
 - `.env` files committed to version control
+
+Allowed repository values are public account aliases, public endpoints, and non-secret resource IDs needed for audit and reproducibility. Redacted evidence must be reviewed before publication.
+
+For CI/CD, prefer short-lived workload identity such as GitHub Actions OIDC. If a provider requires a stored CI secret, scope it to one environment and purpose, keep it in a protected GitHub environment, and retain its authoritative custody record in QM.
 
 ## Rotation Policy
 
@@ -43,7 +47,7 @@ All secrets must be stored in the approved manager. No secrets in:
 
 ## Audit
 
-TODO: Define audit cadence (recommendation: quarterly review of who has access to what).
+Review access quarterly and after every personnel, provider, or production-ownership change. Audit account recovery ownership, MFA, active service identities, GitHub environments, provider roles, and the corresponding QM custody entries without exporting credential values.
 
 ## Incident Response
 
