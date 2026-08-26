@@ -67,7 +67,7 @@ joka-source-foundation/
 ├── projects/         — one folder per project cell (+ _template for new ones)
 ├── brand/            — logos, palette, typography, voice & tone
 ├── socials/          — handle registry, playbooks, content calendar
-├── content/          — announcements, blog posts, talks
+├── content/          — announcements, blog posts, talks, curricula
 ├── governance/       — decisions log, meeting notes, contribution policy
 ├── legal/            — entity status, IP assignment, MoUs
 ├── ops/              — accounts inventory, domains, secrets policy
